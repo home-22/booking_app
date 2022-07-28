@@ -15,6 +15,13 @@ class _HomeState extends State<Home> {
     const Text('Tickets'),
     const Text('Profile'),
   ];
+  void onItem(int index) {
+    setState(() {
+      selectedIndex = index;
+      print(selectedIndex);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,13 +32,18 @@ class _HomeState extends State<Home> {
         child: pages[selectedIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
+          onTap: onItem,
+          currentIndex: selectedIndex,
           elevation: 10,
+          showSelectedLabels: false,
           showUnselectedLabels: false,
+          selectedItemColor: Colors.lightGreen,
+          unselectedItemColor: Colors.black45,
           items: const [
             BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-                backgroundColor: Colors.amber),
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
             BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.airplane_ticket), label: 'Ticket'),
