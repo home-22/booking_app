@@ -1,3 +1,4 @@
+import 'package:booking_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class BottomBar extends StatefulWidget {
@@ -10,7 +11,7 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   int selectedIndex = 0;
   List pages = [
-    const Text('Home'),
+    const HomeScreen(),
     const Text('Search'),
     const Text('Tickets'),
     const Text('Profile'),
@@ -18,7 +19,6 @@ class _BottomBarState extends State<BottomBar> {
   void onItem(int index) {
     setState(() {
       selectedIndex = index;
-      print(selectedIndex);
     });
   }
 
@@ -26,7 +26,9 @@ class _BottomBarState extends State<BottomBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Good morning'),
+        title: const Text(
+          'My Ticket',
+        ),
       ),
       body: Center(
         child: pages[selectedIndex],
