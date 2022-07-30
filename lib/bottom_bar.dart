@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class BottomBar extends StatefulWidget {
+  const BottomBar({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<BottomBar> createState() => _BottomBarState();
 }
 
-class _HomeState extends State<Home> {
+class _BottomBarState extends State<BottomBar> {
   int selectedIndex = 0;
   List pages = [
     const Text('Home'),
@@ -39,6 +39,7 @@ class _HomeState extends State<Home> {
           showUnselectedLabels: false,
           selectedItemColor: Colors.lightGreen,
           unselectedItemColor: Colors.black45,
+          type: BottomNavigationBarType.fixed,
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
@@ -47,7 +48,7 @@ class _HomeState extends State<Home> {
             BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.airplane_ticket), label: 'Ticket'),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile')
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
           ]),
     );
   }
