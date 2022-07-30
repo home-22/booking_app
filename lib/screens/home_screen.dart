@@ -17,20 +17,33 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text('Good morning'),
-                    Container(
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        image: const DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage('images/logo.png'),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          'Good morning',
+                          style: TextStyle(color: Colors.black45),
                         ),
-                      ),
-                    )
+                        Text(
+                          'Book Tickets',
+                          style: TextStyle(color: Colors.black45),
+                        ),
+                      ],
+                    ),
                   ],
+                ),
+                Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: const DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('images/logo.png'),
+                    ),
+                  ),
                 ),
               ],
             ),
