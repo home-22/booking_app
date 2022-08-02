@@ -1,3 +1,4 @@
+import 'package:booking_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -22,21 +23,30 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         child: Column(
           children: [
             const Text(
-              'Welcome',
-              style: TextStyle(fontSize: 54),
-            ),
-            const Text(
-              'aboard',
-              style: TextStyle(fontSize: 44),
+              'Welcome\n aboard',
+              style: TextStyle(fontSize: 54, color: Colors.amber),
             ),
             const SizedBox(
               height: 350,
             ),
             const Text(
               'Private jet for your live, work and other goals',
-              style: TextStyle(fontSize: 24),
+              style: TextStyle(fontSize: 24, color: Colors.amber),
             ),
-            ElevatedButton(onPressed: () {}, child: const Text('Get started'))
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => const HomeScreen())));
+                },
+                child: const Text(
+                  'Get started',
+                  style: TextStyle(
+                    color: Colors.amber,
+                    fontSize: 20,
+                  ),
+                ))
           ],
         ),
       ),
