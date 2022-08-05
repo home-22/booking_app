@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -24,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Container(
                 width: double.maxFinite,
                 height: 350,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('images/home.png'), fit: BoxFit.cover),
                 ),
@@ -37,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.menu,
                         color: Colors.amber,
                         size: 30,
@@ -49,9 +47,9 @@ class _HomeScreenState extends State<HomeScreen> {
               top: 320,
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                height: 500,
+                height: 400,
                 decoration: BoxDecoration(
-                  color: Colors.grey[500],
+                  color: Colors.grey[700],
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(10),
                     topRight: Radius.circular(10),
@@ -60,20 +58,69 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   children: [
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          'Your flight',
-                          style: TextStyle(fontSize: 30, color: Colors.amber),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.menu_open_outlined,
-                            size: 30,
-                            color: Colors.amber,
+                        const Padding(
+                          padding: EdgeInsets.only(top: 30),
+                          child: Text(
+                            'Your flight',
+                            style: TextStyle(fontSize: 33, color: Colors.amber),
                           ),
                         ),
+                        const SizedBox(width: 50),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 30),
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.menu_open_outlined,
+                              size: 33,
+                              color: Colors.amber,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'From',
+                        ),
+                        const SizedBox(height: 5),
+                        Container(
+                          height: 50,
+                          width: 350,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.grey[400]),
+                        ),
+                        const SizedBox(height: 10),
+                        const Text('To'),
+                        const SizedBox(height: 5),
+                        Container(
+                          height: 50,
+                          width: 350,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.grey[400]),
+                        ),
+                        const SizedBox(height: 30),
+                        Container(
+                          height: 50,
+                          width: 350,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.amber),
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.grey[600]),
+                          alignment: Alignment.center,
+                          child: const Text(
+                            'Choose airplane',
+                            style: TextStyle(color: Colors.amber, fontSize: 23),
+                          ),
+                        )
                       ],
                     )
                   ],
