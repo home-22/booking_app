@@ -13,41 +13,52 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: const EdgeInsets.only(top: 40, left: 20),
         width: double.maxFinite,
         height: double.maxFinite,
         decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage('images/home.png'), fit: BoxFit.cover),
         ),
-        child: Column(
-          children: [
-            const Text(
-              'Welcome\n aboard',
-              style: TextStyle(fontSize: 54, color: Colors.amber),
-            ),
-            const SizedBox(
-              height: 350,
-            ),
-            const Text(
-              'Private jet for your live, work and other goals',
-              style: TextStyle(fontSize: 24, color: Colors.amber),
-            ),
-            ElevatedButton(
-                onPressed: () {
+        child: Padding(
+          padding: const EdgeInsets.only(top: 30, bottom: 10, left: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Welcome\n aboard',
+                style: TextStyle(fontSize: 54, color: Colors.amber),
+              ),
+              SizedBox(height: 350),
+              const Text(
+                'Private jet for your live, work and other goals',
+                style: TextStyle(fontSize: 24, color: Colors.amber),
+              ),
+              GestureDetector(
+                onTap: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: ((context) => const HomeScreen())));
                 },
-                child: const Text(
-                  'Get started',
-                  style: TextStyle(
-                    color: Colors.amber,
-                    fontSize: 20,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Container(
+                    height: 50,
+                    width: 160,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Colors.amber),
+                        color: Colors.grey.withOpacity(0.4)),
+                    alignment: Alignment.center,
+                    child: const Text(
+                      'Get started',
+                      style: TextStyle(color: Colors.amber, fontSize: 20),
+                    ),
                   ),
-                ))
-          ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
