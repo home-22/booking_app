@@ -1,5 +1,6 @@
 import 'package:booking_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -20,18 +21,25 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               image: AssetImage('images/home.png'), fit: BoxFit.cover),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(top: 30, bottom: 10, left: 20),
+          padding: const EdgeInsets.only(top: 40, bottom: 10, left: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Welcome\n aboard',
+                'Welcome',
                 style: TextStyle(fontSize: 54, color: Colors.amber),
               ),
-              SizedBox(height: 350),
               const Text(
-                'Private jet for your live, work and other goals',
-                style: TextStyle(fontSize: 24, color: Colors.amber),
+                'aboard',
+                style: TextStyle(fontSize: 54, color: Colors.amber),
+              ),
+              
+              const Padding(
+                padding: EdgeInsets.only(top: 360),
+                child: Text(
+                  'Private jet for your live, work and other goals',
+                  style: TextStyle(fontSize: 24, color: Colors.amber),
+                ),
               ),
               GestureDetector(
                 onTap: () {

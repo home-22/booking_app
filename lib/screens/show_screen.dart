@@ -1,6 +1,5 @@
+import 'package:booking_app/widgets/box_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class ShowScreen extends StatefulWidget {
   const ShowScreen({Key? key}) : super(key: key);
@@ -12,62 +11,45 @@ class ShowScreen extends StatefulWidget {
 class _ShowScreenState extends State<ShowScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Black',
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          title: Row(
+            children: const [
+              Icon(
+                Icons.arrow_back_sharp,
+                size: 18,
+              ),
+              SizedBox(width: 10),
+              Text(
+                'Back',
+                style: TextStyle(fontSize: 20),
+              ),
+            ],
+          ),
+          elevation: 0,
         ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
-      backgroundColor: Colors.black,
-      body: Padding(
-        padding: const EdgeInsets.all(5),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Choose your jet',
-                  style: TextStyle(color: Colors.amber, fontSize: 32),
+        body: Scaffold(
+            backgroundColor: Colors.black,
+            appBar: AppBar(
+              backgroundColor: Colors.black,
+              title: const Text(
+                'Ghosse your jet',
+                style: TextStyle(color: Colors.amber, fontSize: 24),
+              ),
+              elevation: 0,
+              actions: [
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.settings,
+                    color: Colors.amber,
+                  ),
                 ),
-                Icon(
-                  Icons.segment_rounded,
-                  color: Colors.amber,
-                )
               ],
             ),
-            SizedBox(height: 20),
-            Container(
-              color: Colors.blueAccent,
-              height: 150,
-              width: double.maxFinite,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Positioned(
-                    child: SizedBox(
-                      height: 150,
-                      width: 200,
-                      child: Image.asset(
-                        'images/home.png',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    child: Container(
-                      height: 150,
-                      width: 200,
-                      color: Colors.amber,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+            body: BoxCard()),
       ),
     );
   }

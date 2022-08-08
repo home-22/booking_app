@@ -1,5 +1,7 @@
 import 'package:booking_app/screens/home_screen.dart';
+import 'package:booking_app/screens/show_screen.dart';
 import 'package:booking_app/screens/welcome_screen.dart';
+import 'package:booking_app/widgets/box_card.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,10 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Booking App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.yellow,
-      ),
-      home: WelcomeScreen(),
+      theme: ThemeData(),
+      home: ShowScreen(),
     );
   }
 }

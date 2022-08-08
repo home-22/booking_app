@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
               right: 0,
               child: Container(
                 width: double.maxFinite,
-                height: 350,
+                height: MediaQuery.of(context).size.height,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('images/home.png'), fit: BoxFit.cover),
@@ -88,6 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     const SizedBox(height: 10),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text(
                           'From',
@@ -95,8 +96,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         const SizedBox(height: 5),
                         Container(
+                          margin: EdgeInsets.only(right: 10, left: 10),
                           height: 50,
-                          width: 350,
+                          width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               color: Colors.grey.withOpacity(0.8)),
@@ -108,8 +110,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         const SizedBox(height: 5),
                         Container(
+                          margin: EdgeInsets.only(right: 10, left: 10),
                           height: 50,
-                          width: 350,
+                          width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               color: Colors.grey.withOpacity(0.8)),
@@ -124,8 +127,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                         const ShowScreen())));
                           },
                           child: Container(
+                            margin: EdgeInsets.only(right: 10, left: 10),
                             height: 50,
-                            width: 350,
+                            width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.amber),
                                 borderRadius: BorderRadius.circular(5),
