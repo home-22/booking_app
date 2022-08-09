@@ -1,7 +1,7 @@
 import 'package:booking_app/screens/home_screen.dart';
 import 'package:booking_app/screens/show_screen.dart';
 import 'package:booking_app/screens/welcome_screen.dart';
-import 'package:booking_app/widgets/box_card.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
