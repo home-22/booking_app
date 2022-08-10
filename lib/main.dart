@@ -1,4 +1,5 @@
 import 'package:booking_app/screens/welcome_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:flutter/material.dart';
 
@@ -12,10 +13,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Booking App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(),
+      title: '',
+      theme: _buildTheme(Brightness.light),
       home: const WelcomeScreen(),
+    );
+  }
+
+  ThemeData _buildTheme(brightness) {
+    var baseTheme = ThemeData(brightness: brightness);
+
+    return baseTheme.copyWith(
+      textTheme: GoogleFonts.latoTextTheme(baseTheme.textTheme),
     );
   }
 }

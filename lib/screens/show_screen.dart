@@ -76,6 +76,9 @@ class _ShowScreenState extends State<ShowScreen> {
                   ),
                   child: Row(
                     children: [
+                      const SizedBox(
+                        width: 5,
+                      ),
                       const CircleAvatar(
                         radius: 50,
                         backgroundImage: AssetImage('images/box1.png'),
@@ -143,6 +146,7 @@ class _ShowScreenState extends State<ShowScreen> {
                   ),
                   child: Row(
                     children: [
+                      const SizedBox(width: 5),
                       const CircleAvatar(
                         radius: 50,
                         backgroundImage: AssetImage('images/box2.png'),
@@ -207,6 +211,7 @@ class _ShowScreenState extends State<ShowScreen> {
                   ),
                   child: Row(
                     children: [
+                      const SizedBox(width: 5),
                       const CircleAvatar(
                         radius: 50,
                         backgroundImage: AssetImage('images/box3.png'),

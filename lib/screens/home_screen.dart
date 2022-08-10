@@ -105,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 children: const [
                                   Text(
                                     'From',
-                                    style: TextStyle(color: Colors.amber),
+                                    style: TextStyle(color: Colors.black),
                                   ),
                                 ],
                               ),
@@ -130,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 children: const [
                                   Text(
                                     'To',
-                                    style: TextStyle(color: Colors.amber),
+                                    style: TextStyle(color: Colors.black),
                                   ),
                                 ],
                               ),
