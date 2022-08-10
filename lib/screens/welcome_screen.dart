@@ -1,6 +1,5 @@
 import 'package:booking_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -33,7 +32,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 'aboard',
                 style: TextStyle(fontSize: 54, color: Colors.amber),
               ),
-              
               const Padding(
                 padding: EdgeInsets.only(top: 360),
                 child: Text(
@@ -54,9 +52,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     height: 50,
                     width: 160,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(5),
                         border: Border.all(color: Colors.amber),
-                        color: Colors.grey.withOpacity(0.4)),
+                        color: Colors.grey.shade700),
                     alignment: Alignment.center,
                     child: const Text(
                       'Get started',

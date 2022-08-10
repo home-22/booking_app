@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class ShowScreen extends StatefulWidget {
@@ -22,7 +20,9 @@ class _ShowScreenState extends State<ShowScreen> {
             Row(
               children: [
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
                     icon: const Icon(
                       Icons.arrow_back_rounded,
                       color: Colors.white54,
@@ -40,219 +40,228 @@ class _ShowScreenState extends State<ShowScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
-                SizedBox(),
-                Text(
-                  'Choose your jet',
-                  style: TextStyle(color: Colors.amber, fontSize: 25),
+                Padding(
+                  padding: EdgeInsets.only(left: 15),
+                  child: Text(
+                    'Choose your jet',
+                    style: TextStyle(color: Colors.amber, fontSize: 25),
+                  ),
                 ),
-                Icon(
-                  Icons.article_sharp,
-                  color: Colors.amber,
+                Padding(
+                  padding: EdgeInsets.only(right: 15),
+                  child: Icon(
+                    Icons.article_sharp,
+                    color: Colors.amber,
+                  ),
                 ),
-                SizedBox(),
               ],
             ),
-            Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(
+                  children: const [
+                    SizedBox(
+                      height: 10,
+                    )
+                  ],
+                ),
+                Container(
+                  margin: const EdgeInsets.all(10),
+                  width: double.maxFinite,
+                  height: 110,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade500,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Row(
                     children: [
-                      SizedBox(
-                        height: 10,
-                      )
+                      const CircleAvatar(
+                        radius: 50,
+                        backgroundImage: AssetImage('images/box1.png'),
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            '  Airplan',
+                            style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(left: 10),
+                            child: const Text(
+                              'The most comfortable and\nfaster plane for your goals...',
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.white54,
+                              ),
+                            ),
+                          ),
+                          const Divider(),
+                          Row(
+                            children: const [
+                              Text(
+                                '    4.8',
+                                style: TextStyle(
+                                    color: Colors.amber, fontSize: 15),
+                              ),
+                              SizedBox(width: 5),
+                              Icon(
+                                Icons.star,
+                                color: Colors.amber,
+                              ),
+                              SizedBox(width: 40),
+                              Text(
+                                'from 900 \$',
+                                style: TextStyle(
+                                    fontSize: 20, color: Colors.amber),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ],
                   ),
-                  Container(
-                    margin: const EdgeInsets.all(10),
-                    width: double.maxFinite,
-                    height: 110,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade500,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                            child: Image(image: AssetImage('images/box1.png'))),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text(
-                              'Airplan',
+                )
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(),
+                Container(
+                  margin: const EdgeInsets.all(10),
+                  width: double.maxFinite,
+                  height: 110,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade500,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Row(
+                    children: [
+                      const CircleAvatar(
+                        radius: 50,
+                        backgroundImage: AssetImage('images/box2.png'),
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            '  Private Jet',
+                            style: TextStyle(fontSize: 25, color: Colors.white),
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(left: 10),
+                            child: const Text(
+                              'Perfect and the nost faster\nplane',
                               style: TextStyle(
-                                fontSize: 24,
-                                color: Colors.white,
+                                fontSize: 15,
+                                color: Colors.white54,
                               ),
                             ),
-                            Container(
-                              margin: const EdgeInsets.only(left: 20),
-                              child: const Text(
-                                'The most comfortable and\nfaster plane for your goals...',
+                          ),
+                          const Divider(),
+                          Row(
+                            children: const [
+                              Text(
+                                '     5',
                                 style: TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.white54,
-                                ),
+                                    color: Colors.amber, fontSize: 15),
                               ),
-                            ),
-                            const Divider(),
-                            Row(
-                              children: const [
-                                Text(
-                                  '4.8',
-                                  style: TextStyle(
-                                      color: Colors.amber, fontSize: 15),
-                                ),
-                                SizedBox(width: 10),
-                                Icon(
-                                  Icons.star,
-                                  color: Colors.amber,
-                                ),
-                                SizedBox(width: 40),
-                                Text(
-                                  'from 900 \$',
-                                  style: TextStyle(
-                                      fontSize: 20, color: Colors.amber),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(),
-                  Container(
-                    margin: const EdgeInsets.all(10),
-                    width: double.maxFinite,
-                    height: 110,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade500,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                            child: Image(image: AssetImage('images/box1.png'))),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text(
-                              'Private Jet',
-                              style:
-                                  TextStyle(fontSize: 24, color: Colors.white),
-                            ),
-                            Container(
-                              margin: const EdgeInsets.only(left: 20),
-                              child: const Text(
-                                'Perfect and the nost faster\nplane',
+                              SizedBox(width: 5),
+                              Icon(
+                                Icons.star,
+                                color: Colors.amber,
+                              ),
+                              SizedBox(width: 40),
+                              Text(
+                                '  from 700 \$',
                                 style: TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.white54,
-                                ),
+                                    fontSize: 20, color: Colors.amber),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(),
+                Container(
+                  margin: const EdgeInsets.all(10),
+                  width: double.maxFinite,
+                  height: 110,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade500,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Row(
+                    children: [
+                      const CircleAvatar(
+                        radius: 50,
+                        backgroundImage: AssetImage('images/box3.png'),
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            '  Famaly plane',
+                            style: TextStyle(fontSize: 25, color: Colors.white),
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(left: 10),
+                            child: const Text(
+                              'The most comfortable and\nfaster plane for your goals...',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white54,
                               ),
                             ),
-                            const Divider(),
-                            Row(
-                              children: const [
-                                Text(
-                                  '5',
-                                  style: TextStyle(
-                                      color: Colors.amber, fontSize: 15),
-                                ),
-                                SizedBox(width: 10),
-                                Icon(
-                                  Icons.star,
-                                  color: Colors.amber,
-                                ),
-                                SizedBox(width: 30),
-                                Text(
-                                  'from 700 \$',
-                                  style: TextStyle(
-                                      fontSize: 20, color: Colors.amber),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(),
-                  Container(
-                    margin: const EdgeInsets.all(10),
-                    width: double.maxFinite,
-                    height: 110,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade500,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                            child: Image(image: AssetImage('images/box1.png'))),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text(
-                              'Famaly plane',
-                              style:
-                                  TextStyle(fontSize: 24, color: Colors.white),
-                            ),
-                            Container(
-                              margin: const EdgeInsets.only(left: 20),
-                              child: const Text(
-                                'The most comfortable and\nfaster plane for your goals...',
+                          ),
+                          const Divider(),
+                          Row(
+                            children: const [
+                              Text(
+                                '   4.7',
                                 style: TextStyle(
+                                  color: Colors.amber,
                                   fontSize: 15,
-                                  color: Colors.white54,
                                 ),
                               ),
-                            ),
-                            const Divider(),
-                            Row(
-                              children: const [
-                                Text(
-                                  '4.7',
-                                  style: TextStyle(
-                                      color: Colors.amber, fontSize: 15),
-                                ),
-                                SizedBox(width: 10),
-                                Icon(
-                                  Icons.star,
-                                  color: Colors.amber,
-                                ),
-                                SizedBox(width: 30),
-                                Text(
-                                  'from 1000 \$',
-                                  style: TextStyle(
-                                      fontSize: 20, color: Colors.amber),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
+                              SizedBox(width: 5),
+                              Icon(
+                                Icons.star,
+                                color: Colors.amber,
+                              ),
+                              SizedBox(width: 30),
+                              Text(
+                                'from 1000 \$',
+                                style: TextStyle(
+                                    fontSize: 20, color: Colors.amber),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                )
+              ],
             ),
-            const SizedBox(height: 10),
+            const SizedBox(
+              height: 10,
+            ),
             const Text(
               'Show all',
               style: TextStyle(color: Colors.amber, fontSize: 20),
@@ -268,12 +277,12 @@ class _ShowScreenState extends State<ShowScreen> {
               height: 10,
             ),
             Container(
-              height: 40,
-              width: 300,
+              height: 50,
+              width: 280,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(5),
                   border: Border.all(color: Colors.amber),
-                  color: Colors.grey),
+                  color: Colors.grey.shade700),
               alignment: Alignment.center,
               child: const Text(
                 'Call us',

@@ -51,11 +51,11 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: 400,
-                decoration: BoxDecoration(
-                  color: Colors.grey[800],
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    topRight: Radius.circular(10),
+                decoration: const BoxDecoration(
+                  color: Colors.black87,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(5),
+                    topRight: Radius.circular(5),
                   ),
                 ),
                 child: Column(
@@ -71,13 +71,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             style: TextStyle(fontSize: 33, color: Colors.amber),
                           ),
                         ),
-                        const SizedBox(width: 50),
+                        const SizedBox(width: 20),
                         Padding(
                           padding: const EdgeInsets.only(top: 30),
                           child: IconButton(
                             onPressed: () {},
                             icon: const Icon(
-                              Icons.menu_open_outlined,
+                              Icons.segment_sharp,
                               size: 33,
                               color: Colors.amber,
                             ),
@@ -90,32 +90,52 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
-                          'From',
-                          style: TextStyle(color: Colors.white70),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 20, right: 25, left: 25),
+                          child: Material(
+                            elevation: 5.0,
+                            color: Colors.grey.shade500,
+                            borderRadius: BorderRadius.circular(10.0),
+                            child: MaterialButton(
+                              onPressed: () {},
+                              minWidth: double.maxFinite,
+                              height: 45.0,
+                              child: Row(
+                                children: const [
+                                  Text(
+                                    'From',
+                                    style: TextStyle(color: Colors.amber),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
-                        const SizedBox(height: 5),
-                        Container(
-                          margin: EdgeInsets.only(right: 10, left: 10),
-                          height: 50,
-                          width: MediaQuery.of(context).size.width,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.grey.withOpacity(0.8)),
+                        const SizedBox(
+                          height: 10,
                         ),
-                        const SizedBox(height: 10),
-                        const Text(
-                          'To',
-                          style: TextStyle(color: Colors.white70),
-                        ),
-                        const SizedBox(height: 5),
-                        Container(
-                          margin: EdgeInsets.only(right: 10, left: 10),
-                          height: 50,
-                          width: MediaQuery.of(context).size.width,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.grey.withOpacity(0.8)),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 20, right: 25, left: 25),
+                          child: Material(
+                            elevation: 5.0,
+                            color: Colors.grey.shade500,
+                            borderRadius: BorderRadius.circular(10.0),
+                            child: MaterialButton(
+                              onPressed: () {},
+                              minWidth: double.maxFinite,
+                              height: 50,
+                              child: Row(
+                                children: const [
+                                  Text(
+                                    'To',
+                                    style: TextStyle(color: Colors.amber),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
                         const SizedBox(height: 30),
                         GestureDetector(
@@ -127,13 +147,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                         const ShowScreen())));
                           },
                           child: Container(
-                            margin: EdgeInsets.only(right: 10, left: 10),
+                            margin: const EdgeInsets.only(right: 25, left: 25),
                             height: 50,
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.amber),
                                 borderRadius: BorderRadius.circular(5),
-                                color: Colors.grey.withOpacity(0.4)),
+                                color: Colors.grey.shade700),
                             alignment: Alignment.center,
                             child: const Text(
                               'Choose airplane',
